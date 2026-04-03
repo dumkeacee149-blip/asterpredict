@@ -5,25 +5,17 @@ import SpotlightCard from "@/components/reactbits/SpotlightCard";
 import AnimatedContent from "@/components/reactbits/AnimatedContent";
 import Counter from "@/components/reactbits/Counter";
 import InkDivider from "@/components/InkDivider";
+import HeroVideo from "@/components/HeroVideo";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col overflow-hidden">
+    <div className="flex flex-col overflow-x-hidden">
       {/* ───────── Hero Section ───────── */}
-      <section className="relative min-h-[92vh] flex items-center">
+      <section className="relative min-h-[92vh] flex items-start sm:items-center">
         {/* Video background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover"
-            poster=""
-          >
-            <source src="/hero-bg.mov" type="video/mp4" />
-          </video>
+        <div className="absolute inset-0 overflow-hidden -z-0">
+          <HeroVideo />
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-background/50" />
           {/* Gradient overlays */}
