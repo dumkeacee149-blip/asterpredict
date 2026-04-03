@@ -131,7 +131,7 @@ export default function PredictionCard({ compact = false }: { compact?: boolean 
       {/* Header with price */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-bold text-accent font-[var(--font-heading)] tracking-wider">
+          <span className="text-sm font-bold text-accent font-heading tracking-wider">
             ${SUPPORTED_TOKENS[token]?.symbol}
           </span>
           {currentPrice && (

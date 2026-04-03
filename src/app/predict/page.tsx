@@ -43,7 +43,7 @@ export default function PredictPage() {
         {/* Header */}
         <AnimatedContent>
           <div className="mb-10">
-            <h1 className="font-[var(--font-heading)] text-4xl font-bold tracking-tight">
+            <h1 className="font-heading text-4xl font-bold tracking-tight">
               🥷 <span className="text-gold">Prediction</span> Dashboard
             </h1>
             <p className="text-muted mt-2 text-lg">
@@ -80,7 +80,7 @@ export default function PredictPage() {
                 <div className="ink-card p-6 rounded-2xl">
                   <div className="flex items-center justify-between mb-6">
                     <div>
-                      <h2 className="text-2xl font-bold tracking-tight font-[var(--font-heading)]">
+                      <h2 className="text-2xl font-bold tracking-tight font-heading">
                         ${SUPPORTED_TOKENS[selectedToken].symbol}
                       </h2>
                       <p className="text-sm text-muted">

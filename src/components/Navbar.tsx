@@ -17,7 +17,7 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3">
           <span className="text-2xl">🥷</span>
-          <span className="font-[var(--font-heading)] text-lg font-bold tracking-wider text-foreground">
+          <span className="font-heading text-lg font-bold tracking-wider text-foreground">
             ASTER<span className="text-accent">PREDICT</span>
           </span>
         </Link>

@@ -1,11 +1,11 @@
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16">
-      <h1 className="font-[var(--font-heading)] text-3xl font-bold mb-8 text-gold">About Asterpredict</h1>
+      <h1 className="font-heading text-3xl font-bold mb-8 text-gold">About Asterpredict</h1>
 
       <div className="space-y-8 text-muted leading-relaxed">
         <section>
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-3">What is Asterpredict?</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground mb-3">What is Asterpredict?</h2>
           <p>
             Asterpredict is an AI-powered market prediction platform focused on the{" "}
             <a href="https://www.asterdex.com/en" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
@@ -18,7 +18,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-3">How It Works</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground mb-3">How It Works</h2>
           <ol className="list-decimal pl-5 space-y-2">
             <li>We fetch real-time market data from public APIs (price, volume, trends)</li>
             <li>This data is fed into an advanced reasoning AI model for multi-step analysis</li>
@@ -28,7 +28,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-3">About Aster DEX</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground mb-3">About Aster DEX</h2>
           <p>
             Aster is a privacy-focused decentralized exchange offering perpetual markets on
             crypto, stocks, and commodities. Built on its own Layer 1 chain with 100K+ TPS,
@@ -39,7 +39,7 @@ export default function AboutPage() {
         </section>
 
         <section className="ink-card rounded-xl p-6">
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-accent-red mb-3">⚠️ Disclaimer</h2>
+          <h2 className="font-heading text-xl font-bold text-accent-red mb-3">⚠️ Disclaimer</h2>
           <div className="space-y-3 text-sm">
             <p>
               <strong className="text-foreground">This is NOT financial advice.</strong>{" "}
@@ -63,7 +63,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-3">Technology</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground mb-3">Technology</h2>
           <ul className="space-y-1 text-sm">
             <li>• <strong>AI Model:</strong> Advanced Reasoning LLM</li>
             <li>• <strong>Market Data:</strong> CoinGecko API</li>
@@ -73,7 +73,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="font-[var(--font-heading)] text-xl font-bold text-foreground mb-3">Contact</h2>
+          <h2 className="font-heading text-xl font-bold text-foreground mb-3">Contact</h2>
           <p>
             Follow us on{" "}
             <a href="https://x.com/Asterpredict" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">

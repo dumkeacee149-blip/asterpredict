@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <div className="flex items-center gap-3">
             <span className="text-lg">🥷</span>
-            <span className="font-[var(--font-heading)] text-sm font-bold tracking-wider text-muted">
+            <span className="font-heading text-sm font-bold tracking-wider text-muted">
               ASTER<span className="text-accent">PREDICT</span>
             </span>
           </div>

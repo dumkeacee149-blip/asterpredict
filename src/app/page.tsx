@@ -53,7 +53,7 @@ export default function Home() {
               </AnimatedContent>
 
               <AnimatedContent delay={0.1}>
-                <h1 className="font-[var(--font-display)] font-semibold text-7xl sm:text-8xl lg:text-[10rem] tracking-wider leading-[0.85] uppercase">
+                <h1 className="font-display font-semibold text-7xl sm:text-8xl lg:text-[10rem] tracking-wider leading-[0.85] uppercase">
                   <span className="text-hero-gold">Predict</span>
                   <br />
                   <span className="text-hero-light">the Next</span>
@@ -121,7 +121,7 @@ export default function Home() {
                 { value: 42, suffix: "", label: "CMC Ranking", prefix: "#" },
               ].map((stat) => (
                 <div key={stat.label} className="text-center space-y-2">
-                  <div className="text-4xl sm:text-5xl font-bold text-gold font-[var(--font-display)] tracking-wider">
+                  <div className="text-4xl sm:text-5xl font-bold text-gold font-display tracking-wider">
                     <Counter value={stat.value} prefix={stat.prefix} suffix={stat.suffix} />
                   </div>
                   <div className="text-sm text-muted tracking-wide">{stat.label}</div>
@@ -143,7 +143,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedContent>
             <div className="text-center mb-16 space-y-4">
-              <h2 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold tracking-tight text-gold">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-gold">
                 The Arsenal
               </h2>
               <p className="text-muted text-lg max-w-md mx-auto">
@@ -194,7 +194,7 @@ export default function Home() {
                     >
                       {feature.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-foreground font-[var(--font-heading)] tracking-wide">
+                    <h3 className="text-xl font-bold text-foreground font-heading tracking-wide">
                       {feature.title}
                     </h3>
                     <p className="text-sm text-muted leading-relaxed">
@@ -214,7 +214,7 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <AnimatedContent>
             <div className="text-center mb-16 space-y-4">
-              <h2 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold tracking-tight">
+              <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight">
                 Why <span className="text-gold">Aster DEX</span>?
               </h2>
               <p className="text-muted text-lg">The ninja DEX is just getting started</p>
@@ -254,7 +254,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
           <AnimatedContent>
-            <h2 className="font-[var(--font-heading)] text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="font-heading text-4xl sm:text-5xl font-bold tracking-tight mb-6">
               Ready to
               <br />
               <span className="text-gold">
