@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
+/* ═══════════════════════════════════════════
+   水墨游戏 — Ink Wash Game Design System
+   Inspired by Naraka / Phantom Blade / MK
+   ═══════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #08080c;
+  --foreground: #e8dcc8;
+  --accent: #c9a85c;
+  --accent-purple: #7c5cbf;
+  --accent-teal: #00d4aa;
+  --accent-red: #8b2020;
+  --surface: #0e0e18;
+  --surface-light: #16162a;
+  --muted: #6b6b7b;
+  --ink: #1a1a2a;
+  --gold-glow: rgba(201, 168, 92, 0.3);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --color-accent-purple: var(--accent-purple);
+  --color-accent-teal: var(--accent-teal);
+  --color-accent-red: var(--accent-red);
+  --color-surface: var(--surface);
+  --color-surface-light: var(--surface-light);
+  --color-muted: var(--muted);
+  --color-ink: var(--ink);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+/* ─── Animations ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes kanji-fade {
+  0% { opacity: 0; filter: blur(8px); transform: scale(1.1); }
+  100% { opacity: 0.03; filter: blur(0px); transform: scale(1); }
+}
+@keyframes brush-reveal {
+  0% { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0% 0 0); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
+.animate-shimmer { animation: shimmer 3s ease infinite; }
+.animate-ticker { animation: ticker-scroll 30s linear infinite; }
+.animate-blink { animation: blink 1s step-end infinite; }
+.animate-kanji { animation: kanji-fade 2s ease-out forwards; }
+
+/* ─── Gold gradient text ─── */
+.text-gold {
+  background: linear-gradient(135deg, #c9a85c 0%, #f0d78c 50%, #c9a85c 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Hero Title — premium metallic ─── */
+.text-hero-gold {
+  color: #dbab58;
+}
+
+.text-hero-light {
+  color: var(--foreground);
+}
+
+/* ─── Brush stroke underline ─── */
+.brush-underline {
+  position: relative;
+  display: inline-block;
+}
+.brush-underline::after {
+  content: '';
+  position: absolute;
+  left: -5%;
+  bottom: -4px;
+  width: 110%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* ─── Ink Card ─── */
+.ink-card {
+  background: linear-gradient(145deg, rgba(14, 14, 24, 0.9), rgba(8, 8, 12, 0.95));
+  border: 1px solid rgba(201, 168, 92, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+.ink-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(201, 168, 92, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.ink-card:hover::before { opacity: 1; }
+
+/* ─── Confidence Bar ─── */
+.confidence-bar {
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(201, 168, 92, 0.1);
+  overflow: hidden;
+}
+.confidence-bar > div {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent-teal), var(--accent));
+  transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ─── Stream cursor ─── */
+.stream-cursor::after {
+  content: '▊';
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+/* ─── Seal stamp ─── */
+.ink-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--accent-red);
+  color: var(--accent-red);
+  padding: 4px 12px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: rotate(-3deg);
+  opacity: 0.8;
 }
