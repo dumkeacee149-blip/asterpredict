@@ -53,7 +53,7 @@ export default function Home() {
               </AnimatedContent>
 
               <AnimatedContent delay={0.1}>
-                <h1 className="font-[var(--font-display)] text-7xl sm:text-8xl lg:text-[10rem] tracking-wider leading-[0.9] uppercase">
+                <h1 className="font-[var(--font-display)] font-semibold text-7xl sm:text-8xl lg:text-[10rem] tracking-wider leading-[0.85] uppercase">
                   <span className="text-hero-gold">Predict</span>
                   <br />
                   <span className="text-hero-light">the Next</span>
