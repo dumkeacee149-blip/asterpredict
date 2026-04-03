@@ -35,7 +35,7 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-[65%_center] sm:object-center"
       >
         <source src="/hero-bg.mov" type="video/mp4" />
       </video>
