@@ -35,12 +35,12 @@ export default function HeroVideo() {
         muted
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover object-[65%_center] sm:object-center"
+        className="absolute inset-0 w-full h-full object-cover sm:object-center max-sm:object-contain max-sm:object-[center_20%]"
       >
         <source src="/hero-bg.mov" type="video/mp4" />
       </video>
-      {/* Fallback gradient background when video doesn't load */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a15] via-[#0e0e1f] to-[#08080c] -z-10" />
+      {/* Dark bg to fill letterbox gaps on mobile */}
+      <div className="absolute inset-0 bg-[#08080c] -z-10" />
     </>
   );
 }
